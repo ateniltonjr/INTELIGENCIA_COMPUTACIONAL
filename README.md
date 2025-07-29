@@ -166,4 +166,7 @@ Os dados são normalizados antes do treinamento e da predição.
 A saída da classificação indica se o motor está operando normalmente ou com falta de fase.
 ````
 👨‍🔧 Autor
-Projeto desenvolvido por Atenilton Santos de Souza Júnior para análise de vibrações em motores utilizando sensores MPU e técnicas de inteligência computacional.
+
+Projeto desenvolvido por:
+
+Atenilton Santos de Souza Júnior para análise de vibrações em motores utilizando sensores MPU e técnicas de inteligência computacional.
