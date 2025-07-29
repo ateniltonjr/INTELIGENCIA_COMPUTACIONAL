@@ -164,6 +164,6 @@ A rede neural foi treinada com um conjunto limitado de medições (10 com todas 
 Os dados são normalizados antes do treinamento e da predição.
 
 A saída da classificação indica se o motor está operando normalmente ou com falta de fase.
-
+````
 👨‍🔧 Autor
 Projeto desenvolvido por Atenilton Santos de Souza Júnior para análise de vibrações em motores utilizando sensores MPU e técnicas de inteligência computacional.
