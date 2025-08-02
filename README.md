@@ -13,6 +13,7 @@ A técnica aplicada é uma rede neural multicamadas (MLP - Multilayer Perceptron
 - Valor máximo
 - Valor mínimo
 
+```
 🧠 Técnica Utilizada: Rede Neural Multicamadas (MLP)
 A análise é baseada em uma rede neural multicamadas (MLP – Multilayer Perceptron), que é um tipo de modelo de inteligência computacional supervisionado, capaz de aprender padrões complexos a partir de dados numéricos. Ela é composta por:
 
@@ -65,6 +66,7 @@ A extração de estatísticas reduz o volume de dados e preserva informações e
 
 A rede MLP consegue aprender relações não lineares entre os dados de vibração e o estado do motor.
 
+````
 ````
 
 📁 modelo_mpu_nn.h5
@@ -162,6 +164,9 @@ A rede neural foi treinada com um conjunto limitado de medições (10 com todas 
 Os dados são normalizados antes do treinamento e da predição.
 
 A saída da classificação indica se o motor está operando normalmente ou com falta de fase.
-
+````
 👨‍🔧 Autor
-Projeto desenvolvido por Atenilton Santos de Souza Júnior para análise de vibrações em motores utilizando sensores MPU e técnicas de inteligência computacional.
+
+Projeto desenvolvido por:
+
+Atenilton Santos de Souza Júnior para análise de vibrações em motores utilizando sensores MPU e técnicas de inteligência computacional.
