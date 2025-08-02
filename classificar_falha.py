@@ -3,6 +3,10 @@ import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
 import joblib
+from sklearn.metrics import classification_report
+import matplotlib.pyplot as plt
+import io
+import PIL.Image
 
 # Oculta mensagens de log do TensorFlow (aviso de compilador etc)
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -21,8 +25,12 @@ def extrair_features(df):
 # Função para carregar o arquivo CSV e classificá-lo
 def classificar_novo_arquivo(caminho_csv):
     print("🔄 Carregando modelo e dados de normalização...")
-    model = load_model("modelo_mpu_nn.h5")
-    scaler = joblib.load("scaler_nn.pkl")
+    try:
+        model = load_model("modelo_mpu_nn.h5")
+        scaler = joblib.load("scaler_nn.pkl")
+    except FileNotFoundError:
+        print("❌ Arquivo de modelo 'modelo_mpu_nn.h5' não encontrado. Treine o modelo antes de classificar.")
+        return
 
     print(f"📥 Lendo arquivo: {caminho_csv}")
     colunas = ['amostra', 'accX', 'accY', 'accZ', 'giroX', 'giroY', 'giroZ']
@@ -35,8 +43,10 @@ def classificar_novo_arquivo(caminho_csv):
     print("🧠 Realizando predição...")
     pred = model.predict(feats_scaled, verbose=0)
     classe = np.argmax(pred, axis=1)[0]
-    descricao = "✅ Motor em funcionamento normal (todas as fases)" if classe == 0 else "⚠️ Falta de fase detectada no motor"
-    
-    print(f"\n📊 Resultado da Classificação: {descricao}")
+    descricao = "Motor em funcionamento normal (todas as fases)" if classe == 0 else "Falta de fase detectada no motor"
 
-classificar_novo_arquivo("banco_de_dados/teste_motor.csv")
+    print(f"\nResultado da Classificação: {descricao}")
+
+
+print("__________________________________________________")
+classificar_novo_arquivo("banco_de_dados/teste_motor_faltando_fase.csv")
